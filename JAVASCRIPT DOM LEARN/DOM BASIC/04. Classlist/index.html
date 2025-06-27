@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        body{
+            background-color: purple;
+        }
+
+        .red{
+            color: crimson;
+            font-weight: normal;
+            font-family: sans-serif;
+            text-decoration: line-through;
+        }
+
+        .yellow{
+            color: yellow;
+            font-weight: normal;
+            font-family: sans-serif;
+        }
+
+        .blue{
+            color: blue;
+            font-weight: normal;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello World</h1>
+    <h2>Hello Neo</h2>
+    <script>
+      
+      const h1 = document.querySelector('h1')
+      const h2 = document.querySelector('h2')
+
+      h1.classList.add('blue')
+      h1.classList.remove('red')
+      h2.classList.toggle('yellow')
+
+    </script>
+</body>
+</html>

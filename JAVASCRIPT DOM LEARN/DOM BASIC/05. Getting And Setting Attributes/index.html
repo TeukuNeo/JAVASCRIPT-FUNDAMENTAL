@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        a{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://youtube.com">Youtube</a>
+    <input type="text" class="input">
+    <input type="text" id="input">
+    <script>
+
+       //Getting Attributes
+
+       const a = document.querySelector("a")
+
+       const input = document.querySelector(".input")
+
+       const newInput = document.querySelector("#input")
+
+       console.log(a.href)
+
+       console.log(input.value)
+
+       console.log(input.type)
+
+       //Setting Attributes
+
+       a.href="https://www.youtube.com/@huxnwebdev"
+
+       console.log(input.type="text")
+
+       // console.log(input.value="Hallo")
+
+       console.log(input.placeholder="Please input something here..")
+
+       console.log(newInput.placeholder="Please input pass..")
+
+       console.log(newInput.getAttribute("placeholder"))
+
+       console.log(newInput.setAttribute("placeholder", "Password"))
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar Logic</title>
+</head>
+
+<body>
+    <script>
+        alert("Ayo bermain batu gunting kertas!");
+
+        let pilihan = ['Batu', 'Gunting', 'Kertas'];
+        let userChoice = prompt("Masukan pilihan anda (Batu, Gunting, atau Kertas)")
+
+        while (pilihan.indexOf(userChoice) === -1) {
+            alert("Pilihan tidak valid. Silakan coba lagi!");
+            userChoice = prompt("Masukan pilihan anda (Batu, Gunting, atau Kertas)")
+        }
+
+        let opsiRandom = pilihan.length;
+        let random = Math.floor(Math.random() * opsiRandom);
+        let komputer = pilihan[random];
+
+        console.log(`Komputer memilih: ${komputer}`);
+
+        if (userChoice === komputer) {
+            alert("Seri!");
+        } else if ((userChoice === 'Batu' && komputer === 'Gunting') || (userChoice === 'Gunting' && komputer === 'Kertas') ||
+           (userChoice === 'Kertas' && komputer === 'Batu')) {
+            alert("Anda menang!");
+        } else {
+            alert("Komputer menang!");
+        }
+        
+    </script>
+</body>
+
+</html>

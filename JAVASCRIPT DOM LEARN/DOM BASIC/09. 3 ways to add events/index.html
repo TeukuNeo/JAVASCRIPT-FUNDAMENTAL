@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+
+    <button onclick="alert('Hay')">Click Me</button>
+
+    <button class="second-btn">Learn More</button>
+
+    <button class="best">Best Way</button>
+
+    <p class="para">
+        Lorem ipsum dolot sit, amet consectetur adipisicing
+        elit.Fugit, velit.
+    </p>
+
+    <form>
+        <input type="text">
+        <input type="submit">
+    </form>
+
+    <script>
+
+       // BAD WAY
+
+        const secondBtn = document.querySelector('.second-btn')
+        secondBtn.onclick = function(){
+            console.log("Neo WebDev")
+        }
+
+        // GREAT WAY
+
+        const best = document.querySelector('.best')
+        best.addEventListener("click", () => {
+           console.log("Hallo ini neo")
+        })
+
+        // Event(e) Object
+
+        const para = document.querySelector('.para')
+        para.addEventListener('click', () => {
+            console.log(event)
+        })
+
+        const form = document.querySelector('form')
+        const input = document.querySelector('input')
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault()
+            console.log(input.value)
+        })
+
+    </script>
+</body>
+</html>

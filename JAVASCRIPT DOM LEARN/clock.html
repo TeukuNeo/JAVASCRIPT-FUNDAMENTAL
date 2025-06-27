@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clock</title>
+    <style>
+        body{
+            background-color: blueviolet;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        p{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            font-size: 75px;
+        }
+    </style>
+</head>
+
+<body id="body">
+    <div class="clock-container">
+       <p id="say"></p> 
+    </div>
+    <script>
+       
+        let pilih = prompt("Masukan pilihan mu")
+
+        if (pilih >= 0 && pilih <= 12) {
+            document.getElementById("say").style.color = "yellow";
+            document.getElementById("say").innerHTML = "Good Morning 🌞";
+        } else if (pilih >= 12 && pilih <= 18) {
+            document.getElementById("say").style.color = "orange";
+            document.getElementById("body").style.backgroundColor = "yellow"
+            document.getElementById("say").innerHTML = "Good Afternoon 🌤️";       
+        } else if (pilih >= 18 || pilih <= 24) {
+            document.getElementById("say").style.color = "aqua";
+            document.getElementById("body").style.backgroundColor = "blue"
+            document.getElementById("say").innerHTML = "Good Evening 🌜";
+        }
+
+    </script>
+</body>
+
+</html>

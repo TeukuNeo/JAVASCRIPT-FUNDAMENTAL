@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Prototype</title>
+</head>
+
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body{
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+
+    .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .nav-container {
+        height: 60px;
+        position: fixed;
+        top: 0px;
+        right: 0px;
+        left: 0px;
+        background-color: darkolivegreen;
+        z-index: 9999;
+    }
+
+    .nav-search {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        top: 13px;
+    }
+
+    .nav-search input {
+        width: 300px;
+        height: 30px;
+        background-color: brown;
+        color: white;
+        border-radius: 25px;
+        border: none;
+        text-decoration: none;
+    }
+
+    .nav-search input::placeholder {
+        color: aliceblue;
+    }
+
+    .nav-search i {
+        position: relative;
+        right: 24px;
+        top: 5px;
+        transform: translateY(-8%);
+        font-size: 20px;
+        color: white;
+        cursor: pointer;
+    }
+
+    .sidebar {
+        padding: 5% 3rem 5%;
+        height: 100%;
+        background-color: red;
+        position: fixed;
+        z-index: 999;
+        width: 45px;
+        overflow-y: scroll;
+    }
+
+    .side-text {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        list-style: none;
+        position: relative;
+        right: 40px;
+    }
+
+    .side-text ul:hover {
+        background-color: pink;
+        padding: 4% 3rem 3%;
+        width: 25%;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .nav-option {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .option-container {
+
+        width: 100%;
+        height: 50px;
+        background-color: darkmagenta;
+        z-index: 99;
+        position: relative;
+        bottom: -55px;
+    }
+
+    .option-container li {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        color: white;
+    }
+
+    .konten {
+        max-width: 1339px;
+        padding: 3rem 5% 3rem;
+        background-color: blue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .main {
+        display: grid;
+        grid-template-columns: repeat(4, 223px);
+        gap: 3rem;
+        padding: 5rem 5% 5rem;
+    }
+
+    .main-box {
+        background-color: orange;
+        padding: 20px;
+        width: 200px;
+        height: 200px;
+        border-radius: 10px;
+    }
+
+    .main-content {
+        width: 160px;
+        height: 150px;
+        background-color: green;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .main-status {
+        display: flex;
+        justify-content: space-between;
+        color: white;
+        list-style: none;
+        position: relative;
+        bottom: 20px;
+        right: 14px;
+    }
+
+    footer {
+        background-color: aquamarine;
+        display: flex;
+        justify-content: center;
+        padding: 3rem;
+    }
+
+    .footer-container li{
+        display: flex;
+        text-align: center;
+        flex-direction: row;
+    }
+
+    .footer-container li ul{
+        font-size: 15px;
+    }
+
+    .footer-container p{
+        display: flex;
+        justify-content: center;
+        margin-left: 20px;
+    }
+</style>
+
+<body>
+    <div class="navbar">
+        <div class="nav-container">
+            <div class="nav-search">
+                <input type="search" placeholder="Search" id="search" required>
+                <i class='bx bx-search-alt-2'></i>
+            </div>
+        </div>
+    </div>
+
+    <aside class="sidebar">
+        <li class="side-text">
+            <ul>Home</ul>
+            <ul>Short</ul>
+            <ul>Subcription</ul>
+        </li>
+        <hr>
+        <li class="side-text">
+            <ul>You</ul>
+            <ul>History</ul>
+        </li>
+        <hr>
+        <li class="side-text">
+            <ul>Trend</ul>
+            <ul>Music</ul>
+            <ul>Film</ul>
+            <ul>Game</ul>
+            <ul>News</ul>
+            <ul>Sport</ul>
+        </li>
+        <hr>
+        <li class="side-text">
+            <ul>You</ul>
+            <ul>History</ul>
+        </li>
+        <hr>
+        <li class="side-text">
+            <ul>Trend</ul>
+            <ul>Music</ul>
+            <ul>Film</ul>
+            <ul>Game</ul>
+            <ul>News</ul>
+            <ul>Sport</ul>
+        </li>
+    </aside>
+
+    <div class="nav-option">
+        <div class="option-container">
+            <li>
+                <ul>Recomendation</ul>
+                <ul>Recomendation</ul>
+                <ul>Recomendation</ul>
+                <ul>Recomendation</ul>
+            </li>
+        </div>
+    </div>
+
+    <div class="konten">
+        <div class="main">
+            <div class="main-box">
+                <div class="main-content">
+                    <li class="main-status">
+                        <ul>Title</ul>
+                        <ul>Date</ul>
+                    </li>
+                </div>
+            </div>
+            <div class="main-box">
+                <div class="main-content">
+                    <li class="main-status">
+                        <ul>Title</ul>
+                        <ul>Date</ul>
+                    </li>
+                </div>
+            </div>
+            <div class="main-box">
+                <div class="main-content">
+                    <li class="main-status">
+                        <ul>Title</ul>
+                        <ul>Date</ul>
+                    </li>
+                </div>
+            </div>
+            <div class="main-box">
+                <div class="main-content">
+                    <li class="main-status">
+                        <ul>Title</ul>
+                        <ul>Date</ul>
+                    </li>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <li>
+                <ul>HOME</ul>
+                <ul>About</ul>
+                <ul>Contact</ul>
+            </li>
+            <p>See more about us in www.navbar.com</p>
+        </div>
+    </footer>
+
+</body>
+<script>
+
+</script>
+
+</html>

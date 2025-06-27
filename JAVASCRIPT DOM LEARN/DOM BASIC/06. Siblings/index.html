@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <section>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li class="fourth">4</li>
+        </ul>
+    </section>
+
+    <script>
+
+        let firstLi = document.querySelector("li")
+
+        let ul = document.querySelector("ul")
+
+        let fourthLi = document.querySelector(".fourth")
+
+        console.log(firstLi.parentElement)
+
+        console.log(firstLi.parentElement.parentElement)
+
+        console.log(ul.children)
+
+        console.log(ul.children[4])
+
+        console.log(ul.children[1].innerText)
+
+        console.log(ul.children[2].innerText = "Three")
+
+        console.log(firstLi.nextElementSibling.textContent)
+
+        console.log(firstLi.nextElementSibling.nextElementSibling.textContent)
+
+        console.log(fourthLi.previousElementSibling)
+
+    </script>
+</body>
+
+</html>

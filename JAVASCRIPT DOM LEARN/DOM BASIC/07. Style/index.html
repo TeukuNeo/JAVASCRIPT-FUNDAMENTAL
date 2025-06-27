@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        h1 {
+            color: crimson;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="color: teal;">Hello World</h1>
+
+    <h2>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit vero recusandae assumenda molestias. Quam, iusto
+        tenetur eligendi, vel neque autem maiores quibusdam alias recusandae, fugit aliquam! Harum perspiciatis
+        distinctio minima <strong>tempora enim adipisci cum dolorem ut aspernatur,</strong> voluptatem maxime suscipit praesentium
+        nostrum accusantium in sit ea fugit exercitationem id sunt!</h2>
+
+    <script>
+
+        const h1 = document.querySelector("h1")
+
+        const h2 = document.querySelector("h2 strong")
+
+        const body = document.querySelector("body")
+
+        console.log(h1.style.backgroundColor = "purple")
+
+        console.log(body.style.backgroundColor = "crimson")
+
+        console.log(h2.style.color = "white")
+
+    </script>
+</body>
+
+</html>

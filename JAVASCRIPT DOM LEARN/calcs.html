@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KALKULATOR</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: aquamarine;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-position: center;
+    }
+
+    section {
+        width: 420px;
+        padding: 30px 40px;
+        border: 2px solid black;
+        background-color: yellow;
+    }
+
+    .calc-container {
+        display: grid;
+        grid-template-rows: 50px 50px 300px;
+        gap: 25px;
+        background-color: transparent;
+        backdrop-filter: blur(999px);
+        padding: 35px;
+        border: 5px solid black;
+    }
+
+    .calc-container h1 {
+        text-align: center;
+    }
+
+    .calc-content {
+        display: flex;
+        justify-content: center;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr 1fr ;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        padding: 20px;
+        width: 200px;
+        height: 200px;
+        gap: 4px;
+    }
+
+    .grid-item {
+        background-color: white;
+        color: black;
+        border: 1px solid black;
+        text-align: center;
+        padding: 15px;
+        cursor: pointer;
+    }
+
+    .grid-item:hover{
+        background-color: rgb(209, 209, 209);
+    }
+
+    .input-number {
+        display: flex;
+        justify-content: center;
+    }
+
+    .input-number input{
+        width: 250px;
+        padding: 20px;
+        font-size: 25px;
+    }
+</style>
+
+<body>
+
+    <section>
+        <div class="calc-container">
+            <h1>CALCULATOR</h1>
+            <div class="input-number">
+                    <input id="calcs" readonly>
+                </div>
+            <div class="calc-content">
+                <div class="grid-container">
+                    <div class="grid-item" onclick="deleteAll()">AC</div>
+                    <div class="grid-item" onclick="deleteOneByOne()">C</div>
+                    <div class="grid-item" onclick="displayValue('%')">%</div>
+                    <div class="grid-item" onclick="displayValue('/')">/</div>
+                    <div class="grid-item" onclick="displayValue('7')">7</div>
+                    <div class="grid-item" onclick="displayValue('8')">8</div>
+                    <div class="grid-item" onclick="displayValue('9')">9</div>
+                    <div class="grid-item" onclick="displayValue('*')">X</div>
+                    <div class="grid-item" onclick="displayValue('4')">4</div>
+                    <div class="grid-item" onclick="displayValue('5')">5</div>
+                    <div class="grid-item" onclick="displayValue('6')">6</div>
+                    <div class="grid-item" onclick="displayValue('-')">-</div>
+                    <div class="grid-item" onclick="displayValue('1')">1</div>
+                    <div class="grid-item" onclick="displayValue('2')">2</div>
+                    <div class="grid-item" onclick="displayValue('3')">3</div>
+                    <div class="grid-item" onclick="displayValue('+')">+</div>
+                    <div class="grid-item" onclick="displayValue('0')">0</div>
+                    <div class="grid-item" onclick="displayValue('.')">.</div>
+                    <div class="grid-item" onclick="calculation()">=</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+<script>
+   
+    const display = document.getElementById("calcs")
+    
+    function displayValue(input){
+        display.value = display.value + input
+    }
+    
+    function calculation(){
+        try{
+            display.value = eval(display.value)
+        }
+        catch(error){
+            display.value = "error"
+        }
+    }
+
+    function deleteAll(){
+        display.value = ""
+    }
+
+    function deleteOneByOne() {
+        let currentValue = display.value;
+      
+        if (currentValue === "") {
+          return; 
+        }
+
+        let newValue = "";
+
+        let digitDeleted = false;
+
+        for (let i = currentValue.length - 1; i >= 0; i--) {
+          if (!isNaN(currentValue[i])) { 
+            if (!digitDeleted) { 
+              newValue = currentValue.slice(0, i) + currentValue.slice(i + 1);
+              digitDeleted = true;
+              break
+            }
+            continue
+          }
+        }
+        display.value = newValue
+      }
+
+</script>
+
+</html>

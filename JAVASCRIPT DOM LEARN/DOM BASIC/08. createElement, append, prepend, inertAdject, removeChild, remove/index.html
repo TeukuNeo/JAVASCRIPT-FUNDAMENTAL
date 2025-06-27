@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+
+<body>
+
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde corporis voluptatibus delectus laborum quidem rem
+        aspernatur illo eos laudantium assumenda? Hic exercitationem facere vero maxime!</p>
+
+    <section>Hello</section>
+ 
+    <ul class="new-list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li class="fourth">4</li>
+        <li>5</li>
+    </ul>
+
+    <script>
+
+        //Creating Element
+
+        const h1 = document.createElement("h1")
+
+        h1.textContent = "Hello World"
+        h1.classList.add("greetings")
+
+        console.log(h1)
+
+        //Append Element
+
+        const body = document.body
+        body.appendChild(h1)
+
+        // Insert before
+
+        const ul = document.querySelector('ul')
+        const newLi = document.createElement('li')
+        
+        newLi.innerText = "I'm li tag"
+        ul.appendChild(newLi)
+
+        const firstLi = document.querySelector('li')
+
+        // selector.insertBefore(what, where)
+
+        ul.insertBefore(newLi, firstLi)
+
+        /* insertAdjacentElement(
+        beforebegin,
+        afterbegin,
+        beforeend,
+        afterend,
+        element) */
+
+        const firstP = document.querySelector("p")
+        const i = document.createElement("i")
+        let section = document.querySelector('section')
+
+        i.innerText = "I'm italics"
+        i.style.color = "skyblue"
+
+        firstP.insertAdjacentElement("beforebegin", i)
+        firstP.insertAdjacentElement("afterbegin", i)
+        firstP.insertAdjacentElement("beforeend", i)
+        firstP.insertAdjacentElement("afterend", i)
+
+        const span = document.createElement("span")
+        span.innerText = "Neo"
+        span.style.color = "crimson"
+
+        section.append(i, span)
+        section.prepend(i, span)
+
+        // remove element
+
+        const newList = document.querySelector(".new-list")
+        const fourth = document.querySelector(".fourth")
+        newList.removeChild(fourth)
+        newList.remove()
+
+    </script>
+</body>
+
+</html>

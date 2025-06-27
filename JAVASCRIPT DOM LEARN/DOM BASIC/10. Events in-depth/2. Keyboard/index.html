@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        .style{
+          display: grid;
+          grid-template-columns: repeat(1,132px);
+          gap: 25px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="style">
+
+        <label>Key Press</label>
+        <input type="text" class="keyPress">
+    
+        <label>Key Up</label>
+        <input type="text" class="keyUp">
+
+        <label>Key Down</label>
+        <input type="text" class="keyDown">
+
+    </div>
+    <script>
+
+        const input = document.querySelector(".keyPress")
+        const inputSecond = document.querySelector(".keyUp")
+        const inputThird = document.querySelector(".keyDown")
+
+        input.addEventListener('keypress', () => {
+            console.log("Key pressed")
+        })
+
+        inputSecond.addEventListener('keyup', () => {
+            console.log("Key pressed up")
+        })
+
+        inputThird.addEventListener('keydown', () => {
+            console.log("Key pressed down")
+        })
+
+    </script>
+</body>
+</html>
