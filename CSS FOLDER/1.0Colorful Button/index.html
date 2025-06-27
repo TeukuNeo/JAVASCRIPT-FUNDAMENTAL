@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Styling</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+            background-color: #343a40;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .button-border {
+            background-image: linear-gradient( to right, #ffba08, #faa307, #f48c06, #e85d04, #3c096c);
+            padding: 5px;
+        }
+
+        .button-border:hover {
+            background-image: linear-gradient( to left,#ffba08, #faa307, #f48c06, #e85d04, #3c096c);
+        }
+
+        .button {
+            background-color: black;
+            padding: 1em 1.5em;
+            letter-spacing: .1em;
+            color: rgb(155, 153, 153);
+            font-size: medium;
+            cursor: pointer;
+            border: none;
+            font-family: inherit;
+        }
+
+        .button:hover {
+            color: #fff;
+            padding: 1.1em 1.6em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="button-border">
+            <button type="button" class="button">
+                Start Coding!
+            </button>
+        </div>
+    </div>
+</body>
+
+</html>
