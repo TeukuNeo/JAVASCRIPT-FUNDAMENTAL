@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUPER CONSTRUCTOR</title>
+</head>
+
+<body>
+    <script>
+
+        class Product {
+            constructor(name) {
+                this.name = name;
+            }
+
+            sayTaste(name) {
+                console.info(`Buah ini jenisnya ${name}`);
+            }
+        }
+
+        // untuk kelas child wajib menggunakan keyword super 
+        // pada constructornya agar tidak terjadi error
+        class Fruit extends Product {
+            constructor(name, taste) {
+                super(name);
+                this.taste = taste;
+            }
+
+            sayTaste(name, taste) {
+                console.info(`Buah ${name}, rasa-nya ${this.taste}`);
+            }
+        }
+
+        const productName = new Product("Fruit");
+        productName.sayTaste('Apel');
+
+        const item = new Fruit("Apel", "Manis");
+        item.sayTaste('Apel', 'manis');
+
+        console.info(productName);
+        console.info(item);
+
+    </script>
+</body>
+
+</html>

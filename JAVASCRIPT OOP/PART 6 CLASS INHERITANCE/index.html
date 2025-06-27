@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>CLASS INHERITANCE</title>
+</head>
+
+<body>
+   <script>
+
+      class Product { 
+         sayTaste(name) {
+            console.info(`Buah ini jenisnya ${name}`)
+         }
+      }
+
+      class Fruit extends Product {
+         sayTaste(name, taste) {
+            console.info(`Buah ${name}, rasa-nya ${taste}`)
+         }
+      }
+
+      const productName = new Product();
+      productName.name = "Fruit";
+      productName.sayTaste('Apel');
+
+      const item = new Fruit();
+      item.name = "Apple";
+      item.sayTaste('Apel', 'manis');
+
+      console.info(productName);
+      console.info(item);
+
+   </script>
+</body>
+
+</html>

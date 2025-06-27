@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>CLASS</title>
+</head>
+
+<body>
+   <script>
+
+      class Buah {
+
+         // constructor property
+         constructor(taste) {
+            this.taste = taste;
+         }
+
+         // method
+         sayTaste(fruitName, taste) {
+            console.info(`Buah ${fruitName} rasa-nya ${taste}`)
+         }
+
+      }
+
+      const apple = new Buah('Sweet');
+      apple.sayTaste('Apel','Manis');     
+      console.info(apple);
+
+      const orange = new Buah('Sour');
+      orange.sayTaste('Jeruk','Asam');
+      console.info(orange);
+
+   </script>
+</body>
+
+</html>

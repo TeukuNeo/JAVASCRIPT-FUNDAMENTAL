@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONSTRUCTOR INHERITANCE</title>
+</head>
+<body>
+   <script>
+
+   // constructor inheritance
+
+    function Employee(firstName) {
+      this.firstName = firstName;
+      this.sayHello = function (name) {
+         console.info(`Hi ${name} my name is ${firstName}`)
+      }
+    }
+
+    function Manager(firstName, lastName) {
+       this.lastName = lastName;
+
+       // method call digunakan untuk memanggil method yang sudah ada
+       Employee.call(this, firstName);
+    }
+
+    const nabil = new Employee("Nabil");
+    nabil.sayHello("Agus");
+    console.log(nabil);
+
+    const agus = new Manager("Agus", "Zakaria");
+    agus.sayHello("Nabil");
+    console.log(agus)
+
+   </script> 
+</body>
+</html>

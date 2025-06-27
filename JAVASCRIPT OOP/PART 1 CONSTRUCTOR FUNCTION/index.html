@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONSTRUCTOR FUNCTION</title>
+</head>
+<body>
+   <script>
+
+    // constructor function
+    // pada constructor function terdapat dua buah parameter 
+    function Person (firstName, lastName) {
+       // constructor function property
+       this.firstName = firstName;
+       this.lastName = lastName;
+
+       // constructor function method
+       this.sayHello = function (name) {
+        console.info(`Hello ${name}, my name is ${this.lastName}`)
+       }
+    }
+
+    // instance constructor function
+    const neo = new Person();
+
+    // mengisi nilai pada property
+    neo.firstName = "Teuku"
+    neo.lastName = "Neo"
+
+    // mengisi nilai pada method
+    neo.sayHello("Halim")
+
+    // mengisi nilai langsung di parameter
+    const hassan = new Person("Teuku", "Hassan");
+    hassan.sayHello("Afghan")
+
+    console.log(neo)
+    console.log(hassan)
+
+   </script> 
+</body>
+</html>

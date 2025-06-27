@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROTOTYPE</title>
+</head>
+<body>
+   <script>
+
+   // pada constructor function terdapat dua buah parameter 
+   function Person (firstName, lastName) {
+      // constructor function property
+      this.firstName = firstName;
+      this.lastName = lastName;
+
+      // constructor function method
+      this.sayHello = function (name) {
+       console.info(`Hello ${name}, my name is ${this.lastName}`)
+      }
+   }
+
+   // menambahkan property pada prototype
+   Person.prototype.sayBye = function () {
+      console.info("Good bye");
+   }
+
+   Person.prototype.run = function () {
+      console.info(`${this.lastName} is running`)
+   }
+
+   // instance constructor function
+   const neo = new Person("Teuku", "Neo");
+   neo.sayHello("Halim");
+
+   const hassan = new Person("Teuku", "Hassan");
+   hassan.sayHello("Afghan");
+
+   console.log(neo);
+   console.log(hassan);
+
+   neo.sayBye();
+   hassan.run();
+
+   </script> 
+</body>
+</html>
